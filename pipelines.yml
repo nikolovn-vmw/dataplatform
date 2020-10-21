@@ -1,0 +1,8 @@
+- pipeline.id: main
+  path.config: "/etc/logstash/conf.d/*.conf"
+- pipeline.id: trades
+  path.config: "/etc/logstash/pipeline-es-trades.json"
+  queue.type: persisted
+- pipeline.id: quotes
+  path.config: "/etc/logstash/pipeline-es-quotes.json"
+  queue.type: persisted
