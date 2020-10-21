@@ -1,0 +1,14 @@
+input {
+  kafka {
+    bootstrap_servers => "@@KAFKA_SERVERS@@"
+    topics => ["trades"]
+    codec => json
+  }
+}
+output {
+  elasticsearch {
+    hosts => "@@ELASTICSEARCH_URI@@"
+    index => "kafkatrades"
+    ssl_certificate_verification => false
+  }
+}
