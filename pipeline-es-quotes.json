@@ -1,0 +1,14 @@
+input {
+  kafka {
+    bootstrap_servers => "@@KAFKA_SERVERS@@"
+    topics => ["quotes"]
+    codec => json
+  }
+}
+output {
+  elasticsearch {
+          hosts => "@@ELASTICSEARCH_URI@@"
+    index => "kafkaquotes"
+    ssl_certificate_verification => false
+  }
+}
